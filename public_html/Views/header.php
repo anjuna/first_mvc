@@ -4,7 +4,7 @@
 
 <title><?php echo  $this->title; ?></title>
 <link rel ="shortcut icon" href="<?php echo URL ;?>images/sinewave.ico">
-<link rel="stylesheet" type="text/css" href="<?php echo URL ;?>css/styles.css">
+<link rel="stylesheet" type="text/css" href="<?php echo URL ;?>CSS/styles.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
 
 <?php if (isset($this->js)){
