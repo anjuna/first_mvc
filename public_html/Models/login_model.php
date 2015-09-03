@@ -13,8 +13,11 @@ class login_Model extends model{
 
 		$query = $this->db->prepare("SELECT u_id, role, usern FROM logins Where usern = :login AND passw = :pass");
 
-		$query->bindParam(':login',trim($_POST['username']));
-		$query->bindParam(':pass',trim(Hash::create('md5', $_POST['password'], HASH_KEY)));
+		$u = trim($_POST['username']);
+		$p = trim(hash::create('md5', $_POST['password'], HASH_KEY));
+
+		$query->bindParam(':login',$u);
+		$query->bindParam(':pass', $p);
 
 		$query->execute();
 

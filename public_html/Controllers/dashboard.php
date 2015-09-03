@@ -6,10 +6,10 @@ class dashboard extends controller {
 	{
 
 		parent::__construct();
-		Auth::handleLogin();
+		auth::handleLogin();
 
 
-		$this->view->js = array('dashboard/js/default.js');
+		$this->view->js = array('Dashboard/js/default.js');
 
 	}
 
@@ -23,7 +23,7 @@ class dashboard extends controller {
 
 	public function logout()
 	{
-		Session::destroy();
+		session::destroy();
 		header('Location: ../Index');
 		exit;
 	}

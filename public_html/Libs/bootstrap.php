@@ -46,7 +46,6 @@ class bootstrap {
 	{
 
 		$file = ROOT_D.$this->controllerPath . $this->my_url[0] . '.php';
-		echo $file;
 
 		if (file_exists($file)) {
 
