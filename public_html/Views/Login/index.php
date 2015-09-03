@@ -2,7 +2,7 @@ You're about to get logged in bruv:s <br><br><br><br>
 
 <div class="formz">
 
-	<form action ="Login/run" method="post">
+	<form action ="login/run" method="post">
 
 		<label>Username   </label><input type="text" name="username"><br><br>
 		<label>Password  </label><input type="password" name="password"><br><br>

@@ -12,7 +12,7 @@ foreach ($mess as $line) {
 ?>
 
 <div class="formz">
-	<form action="Register/run" method="post"> 
+	<form action="register/run" method="post"> 
 
 		<div>Your email:  <input type="text" name="new_email" value="<?php echo (isset($_POST['new_email'])) ? $_POST['new_email'] : ''; ?>"/></div>
 		<br /><br />
