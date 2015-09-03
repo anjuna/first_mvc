@@ -1,0 +1,43 @@
+body 			{background-color:#8AB0BD; width:80%; margin:50px auto; }
+
+div 			{border-radius:4px;}
+
+#header			{background-color:#A93939; padding:30px; margin: 40px; }
+
+
+
+#header a 		{display:inline-block;width:110px; font-size:20px; padding:5px; margin:5px 10px; text-align:center; text-decoration:none;
+					border: 2px solid black; border-radius:3px;}
+
+
+#header #logs 	{ float:right;}
+
+#header #you_are {width:200px; font-size:20px;font-style:italic;}
+
+
+
+
+#content 					{background-color:#376D7F; padding:30px; margin: 40px; }
+h1							{padding-top:40px;}
+.formz 				{width:35% ;margin:0 auto; }
+.formz input 		{float:right;}
+
+
+
+#list 					{width:60%; margin:0 auto; font-size:20px; }
+#list a 				{float:right}
+
+
+#list #note 			{padding:10px;}
+#list #date 			{float:right;}
+#list #your_text 		{font-size:14px;}
+
+
+
+
+
+
+
+#footer						{background-color:#A93939; padding:30px; margin: 40px; }
+
+#warning 					{background-color:red;}
