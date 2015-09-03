@@ -6,7 +6,7 @@ class controller {
 	public function __construct()
 	{		
 		$this->view = new view();
-		Session::ennit();
+		session::ennit();
 	}
 
 	public function loadModel($name, $my_path)

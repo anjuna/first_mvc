@@ -17,7 +17,7 @@ class Register_Model extends Model {
 
 		$query->execute();
 
-		Session::set('activate','You have successfully created an account! Please check your email, and follow the activation instructions from there');
+		session::set('activate','You have successfully created an account! Please check your email, and follow the activation instructions from there');
 
 		header('Location: ../Index');
 	}

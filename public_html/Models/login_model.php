@@ -3,7 +3,7 @@
 
 class Login_Model extends Model{
 
-	function __construct(){
+	public function __construct(){
 
 		parent::__construct();
 
@@ -23,10 +23,10 @@ class Login_Model extends Model{
 		if($results){
 
 			
-			Session::set('loggedIn',true);
-			Session::set('role', $results->role);
-			Session::set('userid', $results->u_id);
-			Session::set('username', $results->usern);
+			session::set('loggedIn',true);
+			session::set('role', $results->role);
+			session::set('userid', $results->u_id);
+			session::set('username', $results->usern);
 
 			header('Location: ../dashboard/index');
 

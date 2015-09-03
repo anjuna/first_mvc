@@ -50,7 +50,7 @@ class User_Model extends Model{
 
 			$this->db->update('logins',
 								 array('usern'=>$data['useR'],
-								 	   'passw'=>Hash::create('md5',$data['pasS'],HASH_KEY),
+								 	   'passw'=>hash::create('md5',$data['pasS'],HASH_KEY),
 								 	   'role' =>$data['rolE'],
 								 	   'u_id' =>$data['iD']),
 								 'u_id'
