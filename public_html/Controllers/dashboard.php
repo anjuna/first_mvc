@@ -30,14 +30,14 @@ class dashboard extends controller {
 
 	public function xhrStuff()
 	{
-
+		echo 1;
 	$this->model->xhrInsert();
 
 	}
 
 	public function xhrGetListing()
 	{
-
+		echo 2;
 		$this->model->GetListing();
 
 	}
