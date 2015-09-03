@@ -6,7 +6,7 @@ define('ROOT_D',dirname(__FILE__).'/');
 
 require 'config.php';
 require ROOT_D.'Functions/general.php';
-require ROOT_D.'Utils/Auth.php';
+require ROOT_D.'Utils/auth.php';
 //require '../vendor/autoload.php';
 
 spl_autoload_register( function($class){
@@ -15,6 +15,6 @@ spl_autoload_register( function($class){
 });
 
 
-$app = new Bootstrap();
+$app = new bootstrap();
 
 $app->init();
