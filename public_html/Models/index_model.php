@@ -1,7 +1,7 @@
 <?php
 
 
-class Index_Model extends Model {
+class index_model extends model {
 
 	public function __construct()
 	{

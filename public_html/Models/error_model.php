@@ -1,9 +1,9 @@
 <?php
 
 
-class Error_Model extends Model {
+class error_Model extends model {
 
-	function __construct(){
+	public function __construct(){
 
 		
 	}

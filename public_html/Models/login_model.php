@@ -1,7 +1,7 @@
 <?php
 
 
-class Login_Model extends Model{
+class login_Model extends model{
 
 	public function __construct(){
 

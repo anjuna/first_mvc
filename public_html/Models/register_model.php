@@ -1,6 +1,6 @@
 <?php
 
-class Register_Model extends Model {
+class register_model extends model {
 
 	public function __construct()
 	{
@@ -12,7 +12,7 @@ class Register_Model extends Model {
 		$query = $this->db->prepare("INSERT INTO logins VALUES (:username, :password, 0, 'default', :email)");
 
 		$query->bindParam(':username', $data['new_user']);
-		$query->bindParam(':password', Hash::create('md5', $data['new_pass'], HASH_KEY));
+		$query->bindParam(':password', hash::create('md5', $data['new_pass'], HASH_KEY));
 		$query->bindParam(':email', $data['new_email']);
 
 		$query->execute();

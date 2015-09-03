@@ -1,7 +1,7 @@
 <?php
 
 
-class Help_Model extends Model {
+class help_Model extends model {
 
 	function __construct(){
 

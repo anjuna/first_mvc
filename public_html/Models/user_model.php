@@ -1,7 +1,7 @@
 <?php
 
 
-class User_Model extends Model{
+class user_model extends model{
 	
 	public function __construct(){
 
@@ -25,7 +25,7 @@ class User_Model extends Model{
 
 			$this->db->insert('logins',
 							   array('usern'=>$data['useR'],
-									 'passw'=>Hash::create('md5',$data['pasS'],HASH_KEY),
+									 'passw'=>hash::create('md5',$data['pasS'],HASH_KEY),
 									 'role'=>$data['rolE'])
 							);
 
