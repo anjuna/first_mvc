@@ -12,4 +12,4 @@ You're about to get logged in bruv:s <br><br><br><br>
 
 </div>
 
-Don't have account? Get one <a href="Register">here</a>
+Don't have account? Get one <a href="register">here</a>
