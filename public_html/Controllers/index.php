@@ -11,7 +11,7 @@ class index extends controller {
 	public function index()
 	{
 		$this->view->title = 'Hooome!';
-		$this->view->render('index/index');
+		$this->view->render('Index/index');
 	}
 
 

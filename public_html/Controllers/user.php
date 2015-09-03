@@ -5,13 +5,13 @@ class user extends controller {
 	function __construct(){
 
 		parent::__construct();
-		Auth::handleLogin();
+		auth::handleLogin();
 		
-		$type = Session::get('role');
+		$type = session::get('role');
 
 		if( $type != 'owner' ){
 
-			Session::destroy();
+			session::destroy();
 			header('Location: '.URL.'index');
 		}
 
@@ -21,7 +21,7 @@ class user extends controller {
 
 		$this->view->userList = $this->model->userList();
 		$this->view->title = 'User';
-		$this->view->render('user/index');
+		$this->view->render('User/index');
 	}
 
 
@@ -56,7 +56,7 @@ class user extends controller {
 
 		$this->view->user = $this->model->singleUser($id);
 
-		$this->view->render('user/edit');
+		$this->view->render('User/edit');
 
 
 	}

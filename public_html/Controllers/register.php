@@ -12,14 +12,14 @@ class register extends controller {
 	public function index()
 	{
 		$this->view->title = 'Register';
-		$this->view->render('register/index');
+		$this->view->render('Register/index');
 	}
 
 	public function run()
 	{		
 		try { 	
 
-				$form = new Form();
+				$form = new form();
 
 				$form->post('new_email')->val('is_email','','Please enter a valid email address');
 				$form->post('new_user')->val('minlength',5,'Username is too short')->val('maxlength',15,'now it\'s too long!');
@@ -37,7 +37,7 @@ class register extends controller {
 
 		catch (Exception $e) { 
 
-			Session::set('error_message',$e->getMessage());
+			session::set('error_message',$e->getMessage());
 
 			header('Location: ../Register');
 		}

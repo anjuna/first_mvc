@@ -6,7 +6,7 @@ class note extends controller {
 	public function __construct(){
 
 		parent::__construct();
-		Auth::handleLogin();
+		auth::handleLogin();
 
 		$this->view->js = array('note/js/default.js');
 	}
@@ -15,7 +15,7 @@ class note extends controller {
 
 		$this->view->noteList = $this->model->noteList();
 		$this->view->title = 'Notes';
-		$this->view->render('note/index');
+		$this->view->render('Note/index');
 
 	}
 

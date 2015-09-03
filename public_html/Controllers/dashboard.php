@@ -17,7 +17,7 @@ class dashboard extends controller {
 	public function index()
 	{
 		$this->view->title = 'Dashboard';
-		$this->view->render('dashboard/index');
+		$this->view->render('Dashboard/index');
 	}
 
 
