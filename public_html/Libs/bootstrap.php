@@ -38,7 +38,7 @@ class bootstrap {
 	private function loadDefaultController()
 	{
 		require ROOT_D.$this->controllerPath.'index.php';
-		$this->controller = new Index();
+		$this->controller = new index();
 		$this->controller->index();
 	}
 
@@ -109,7 +109,7 @@ class bootstrap {
 	private function error()
 	{
 			require ROOT_D.$this->controllerPath . 'error.php';
-			$this->controller = new Error();
+			$this->controller = new error();
 			$this->controller->index();
 			return false;
 	}

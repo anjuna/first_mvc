@@ -5,7 +5,7 @@ class controller {
 
 	public function __construct()
 	{		
-		$this->view = new View();
+		$this->view = new view();
 		Session::ennit();
 	}
 
