@@ -47,7 +47,6 @@ class database extends PDO {
 	* @param array  $data associative array of data to be inserted
 	* @return null
 	*
-	*
 	**/
 
 	public function insert($table,$data){
