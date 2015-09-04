@@ -38,7 +38,7 @@
 
 		<a href="<?php echo URL;?>dashboard/index" >Dashboard</a>
 		<a href="<?php echo URL;?>note/index" >Notes</a>
-		<a id="logs" href="<?php echo URL;?>dashboard/logout" >Logout</a>
+		<a id="logs" href="<?php echo URL;?>Dashboard/logout" >Logout</a>
 
 			<?php if(Session::get('role') == 'owner'){ 
 
