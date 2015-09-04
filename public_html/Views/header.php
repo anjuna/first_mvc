@@ -11,7 +11,7 @@
 
 	foreach ($this->js as $file) {
 
-		echo '<script type="text/javascript" src = "'.URL.'views/'.$file .'"></script>';
+		echo '<script type="text/javascript" src = "'.URL.'Views/'.$file .'"></script>';
 	}
 
 } ?>
