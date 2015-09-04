@@ -51,7 +51,7 @@ $(function(){
 
 	})
 
-
+	$("#test1").on('click',function(){alert(1);})
 
 
 
