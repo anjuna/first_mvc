@@ -35,7 +35,7 @@ class login_Model extends model{
 
 		} else{ 
 
-			header('Location: ../Login');
+			header('Location: ../login');
 		}
 	}
 

@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors',1);
 error_reporting(E_ALL);
+header('X-XSS-Protection: 1; mode=block');
 
 define('ROOT_D',dirname(__FILE__).'/');
 
@@ -18,3 +19,5 @@ spl_autoload_register( function($class){
 $app = new bootstrap();
 
 $app->init();
+
+echo $_SERVER['SERVER_ADDR'];
