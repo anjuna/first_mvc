@@ -8,7 +8,6 @@ class dashboard extends controller {
 		parent::__construct();
 		auth::handleLogin();
 
-
 		$this->view->js = array('Dashboard/js/default.js');
 
 	}
@@ -30,16 +29,12 @@ class dashboard extends controller {
 
 	public function xhrStuff()
 	{
-		echo 1;
 	$this->model->xhrInsert();
-
 	}
 
 	public function xhrGetListing()
 	{
-		echo 2;
 		$this->model->GetListing();
-
 	}
 
 	public function xhrDelete()
