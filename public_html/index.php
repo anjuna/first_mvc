@@ -19,5 +19,3 @@ spl_autoload_register( function($class){
 $app = new bootstrap();
 
 $app->init();
-
-echo $_SERVER['SERVER_ADDR'];
