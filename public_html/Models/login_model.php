@@ -10,8 +10,7 @@ class login_Model extends model{
 	}
 
 	public function link($data){
-			
-			
+
 			$query = $this->db->prepare("SELECT * FROM logins Where usern = :login");
 
 			$u = $data['username'];
@@ -20,11 +19,15 @@ class login_Model extends model{
 
 			$results = $query->fetch(PDO::FETCH_ASSOC);
 
-			if ($results) {
+			try {
+
+				if (!$results) throw new Exception('No username found m8');
 
 				$p = hash::create('md5', $data['password'], HASH_KEY);
 
-				if ($results['passw'] == $p) {
+				if (!($results['passw'] === $p)) throw new Exception('wrong password dumbass');
+
+				if ($results['Active'] == 0) throw new Exception('Please activate your account');
 
 					session::set('loggedIn',true);
 					session::set('role', $results['role']);
@@ -40,12 +43,14 @@ class login_Model extends model{
 
 					header('Location: ../dashboard/index');
 					exit();
-				}
+			}
 
-			} else { 
+			catch (Exception $e) { 
 
-			header('Location: ../login');
-		}
+				$_SESSION = array();
+				$_SESSION['errors'] = $e->getMessage();
+				header('Location: ../login');
+			}
 	}
 
 }

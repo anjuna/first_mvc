@@ -31,7 +31,7 @@ class login extends controller {
 				//print_r($data);die;
 
 				$this->model->link($data);	
-			}
+		}
 
 		catch (Exception $e) {
 
