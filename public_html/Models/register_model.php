@@ -9,16 +9,23 @@ class register_model extends model {
 
 	public function createUser($data)
 	{
-		$query = $this->db->prepare("INSERT INTO logins VALUES (:username, :password, 0, 'default', :email)");
+		$query = $this->db->prepare("INSERT INTO logins (usern,passw,Active,role,Email) VALUES (:username, :password, 0, 'default', :email)");
+
+		$pass = hash::create('md5', $data['new_pass'], HASH_KEY);
 
 		$query->bindParam(':username', $data['new_user']);
-		$query->bindParam(':password', hash::create('md5', $data['new_pass'], HASH_KEY));
+		$query->bindParam(':password', $pass);
 		$query->bindParam(':email', $data['new_email']);
 
-		$query->execute();
+		if ($query->execute())  {
 
-		session::set('activate','You have successfully created an account! Please check your email, and follow the activation instructions from there');
+			session::set('activate','<br /> You have successfully created an account! Please check your email, and follow the activation instructions from there');
 
-		header('Location: ../Index');
+			header('Location: ../index');
+		} else {
+
+			print_r($this->db->errorInfo());
+			//header('Location: ../error');
+		}
 	}
 }

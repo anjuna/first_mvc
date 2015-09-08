@@ -1,3 +1,11 @@
 You're looking at index
 
-<?php echo  (isset($_SESSION['activate'])) ? $_SESSION['activate'] : '' ; ?>
+<br />
+
+<?php 	
+
+if (isset($_SESSION['activate'])) {
+
+			echo  $_SESSION['activate'];
+			unset($_SESSION['activate']);
+		} 

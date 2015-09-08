@@ -9,38 +9,40 @@ class login_Model extends model{
 
 	}
 
-	public function link(){
-
-		$query = $this->db->prepare("SELECT u_id, role, usern FROM logins Where usern = :login AND passw = :pass");
-
-		$u = trim($_POST['username']);
-		$p = trim(hash::create('md5', $_POST['password'], HASH_KEY));
-
-		$query->bindParam(':login',$u);
-		$query->bindParam(':pass', $p);
-
-		$query->execute();
-
-		$results =  $query->fetch(PDO::FETCH_OBJ);
-
-		if($results){
+	public function link($data){
 			
-			session::set('loggedIn',true);
-			session::set('role', $results->role);
-			session::set('userid', $results->u_id);
-			session::set('username', $results->usern);
+			
+			$query = $this->db->prepare("SELECT * FROM logins Where usern = :login");
 
-			if (isset($_POST['remember'])) {
+			$u = $data['username'];
+			$query->bindParam(':login',$u);
+			$query->execute();
 
-				setcookie("user", $u, time()+7200,"/");
-			}	
+			$results = $query->fetch(PDO::FETCH_ASSOC);
 
-			session_regenerate_id();
+			if ($results) {
 
-			header('Location: ../dashboard/index');
-			exit();
+				$p = hash::create('md5', $data['password'], HASH_KEY);
 
-		} else{ 
+				if ($results['passw'] == $p) {
+
+					session::set('loggedIn',true);
+					session::set('role', $results['role']);
+					session::set('userid', $results['u_id']);
+					session::set('username', $results['usern']);
+
+					if (isset($data['remember'])) {
+
+						setcookie("user", $u, time()+7200,"/");
+					}	
+
+					session_regenerate_id();
+
+					header('Location: ../dashboard/index');
+					exit();
+				}
+
+			} else { 
 
 			header('Location: ../login');
 		}

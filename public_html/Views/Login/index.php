@@ -1,5 +1,11 @@
 You're about to get logged in bruv:s <br><br><br><br>
 
+<?php if (isset($_SESSION['errors'])) {
+
+	echo $_SESSION['errors'];
+	unset($_SESSION['errors']);
+} ?>
+
 <div class="formz">
 
 	<form action ="login/run" method="post">

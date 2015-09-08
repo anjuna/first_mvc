@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+<meta charset="UTF-8" />
 
 <title><?php echo  $this->title; ?></title>
 <link rel ="shortcut icon" href="<?php echo URL ;?>images/sinewave.ico">

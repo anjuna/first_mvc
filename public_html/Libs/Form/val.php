@@ -13,7 +13,7 @@ class Val {
 
 	public function minlength($data, $arg, $message)
 	{
-		if( strlen($data) < $arg){
+		if(strlen($data) < $arg) {
 
 			return $message;
 		}
@@ -21,7 +21,7 @@ class Val {
 
 	public function maxlength($data, $arg, $message)
 	{
-		if ( strlen($data) > $arg) {
+		if (strlen($data) > $arg) {
 
 			return $message;
 		}
@@ -38,6 +38,14 @@ class Val {
 	public function integer($data, $arg = '', $message)
 	{
 		if (!is_numeric($data)) {
+
+			return $message;
+		}
+	}
+
+	public function asci_check($data, $arg, $message)
+	{
+		if (filter_var($data, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH) == false) {
 
 			return $message;
 		}

@@ -24,12 +24,11 @@ class form {
 
 	public function post($field)
 	{
-		$this->_postData[$field] = $_POST[$field];
+		$this->_postData[$field] = trim($_POST[$field]);
 
 		$this->_currentItem = $field;
 
 		return $this;
-
 	}
 	
 	public function fetch($fieldName = false)

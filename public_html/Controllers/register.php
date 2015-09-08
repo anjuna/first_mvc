@@ -39,7 +39,7 @@ class register extends controller {
 
 			session::set('error_message',$e->getMessage());
 
-			header('Location: ../Register');
+			header('Location: ../register');
 		}
 	}
 }
