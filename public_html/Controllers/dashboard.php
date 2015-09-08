@@ -23,6 +23,11 @@ class dashboard extends controller {
 	public function logout()
 	{
 		session::destroy();
+		
+		if (isset($_COOKIE['user'])) {
+			 setcookie('user',"", 1,"/");
+		}
+
 		header('Location: ../index');
 		exit;
 	}

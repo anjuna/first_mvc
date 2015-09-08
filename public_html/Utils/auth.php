@@ -7,7 +7,11 @@ class auth {
 		@session_start();
 		$logged =  $_SESSION['loggedIn'];
 		
-		if($logged == false){
+		if ($logged == true || isset($_COOKIE['user'])) {
+
+			return true;			
+		} else {
+
 			session_destroy();
 			header('Location: '.URL.'index');
 			exit;

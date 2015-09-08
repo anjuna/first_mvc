@@ -6,10 +6,11 @@ You're about to get logged in bruv:s <br><br><br><br>
 
 		<label>Username   </label><input type="text" name="username"><br><br>
 		<label>Password  </label><input type="password" name="password"><br><br>
+		<input type="checkbox" name="remember" value="1">Remember me plz<br><br>
 			<input type ="submit" value="Touch me">
 
 	</form>
 
 </div>
-
+<br><br>
 Don't have account? Get one <a href="register">here</a>

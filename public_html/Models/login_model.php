@@ -24,14 +24,21 @@ class login_Model extends model{
 		$results =  $query->fetch(PDO::FETCH_OBJ);
 
 		if($results){
-
 			
 			session::set('loggedIn',true);
 			session::set('role', $results->role);
 			session::set('userid', $results->u_id);
 			session::set('username', $results->usern);
 
+			if (isset($_POST['remember'])) {
+
+				setcookie("user", $u, time()+7200,"/");
+			}	
+
+			session_regenerate_id();
+
 			header('Location: ../dashboard/index');
+			exit();
 
 		} else{ 
 
