@@ -8,7 +8,7 @@ define('ROOT_D',dirname(__FILE__).'/');
 require 'config.php';
 require ROOT_D.'Functions/general.php';
 require ROOT_D.'Utils/auth.php';
-//require '../vendor/autoload.php';
+require '../vendor/autoload.php';
 
 spl_autoload_register( function($class){
 

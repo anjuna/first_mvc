@@ -20,6 +20,11 @@ class index extends controller {
 		echo 'hey';
 	}
 
+	public function activate()
+	{
+		echo 'yea blad';
+	}
+
 
 
 }

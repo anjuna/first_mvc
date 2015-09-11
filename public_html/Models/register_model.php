@@ -21,6 +21,7 @@ class register_model extends model {
 
 			session::set('activate','<br /> You have successfully created an account! Please check your email, and follow the activation instructions from there');
 
+			my_activation_mail();
 			header('Location: ../index');
 		} else {
 
